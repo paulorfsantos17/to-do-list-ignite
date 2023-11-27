@@ -1,11 +1,26 @@
 import { Trash } from "phosphor-react";
 import styles from "./TaskItem.module.css";
+import { ITaskItem } from "../App";
 
-interface ITaskItemProps {
-  id: string;
+interface ITaskItemProps extends ITaskItem {
+  onChangeStatusTask: (id: string) => void;
+  onDeleteTask: (id: string) => void;
 }
 
-export function TaskItem({ id }: ITaskItemProps) {
+export function TaskItem({
+  id,
+  content,
+  status,
+  onChangeStatusTask,
+  onDeleteTask,
+}: ITaskItemProps) {
+  const handleChangeStatusTask = () => {
+    onChangeStatusTask(id);
+  };
+
+  const handleDeleteTask = () => {
+    onDeleteTask(id);
+  };
   return (
     <div className={styles.contentItem}>
       <div className={styles.input}>
@@ -13,15 +28,15 @@ export function TaskItem({ id }: ITaskItemProps) {
           type="checkbox"
           name=""
           id={id}
-          onClick={() => console.log(`teste`)}
+          onClick={handleChangeStatusTask}
+          checked={status === "success" ? true : false}
         />
         <label htmlFor={id}></label>
       </div>
-      <p>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
+      <p className={status === "success" ? styles.successTask : ""}>
+        {content}
       </p>
-      <button>
+      <button onClick={handleDeleteTask}>
         <Trash size={24} />
       </button>
     </div>

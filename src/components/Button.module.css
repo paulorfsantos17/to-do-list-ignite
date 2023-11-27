@@ -13,6 +13,26 @@
   background-color: var(--blue-dark);
   line-height: 0;
   transition: 0.1s;
+  cursor: pointer;
+}
+
+.buttonDisable {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: none;
+  border-radius: 8px;
+
+  color: var(--gray-100);
+
+  background-color: var(--blue-dark);
+  line-height: 0;
+  transition: 0.1s;
+  opacity: 0.8;
+  cursor: not-allowed;
 }
 
 .button:hover {

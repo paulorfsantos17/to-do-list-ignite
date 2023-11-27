@@ -15,6 +15,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+}
+
+.contentItem > p {
+  width: 100%;
+  text-align: left;
 }
 
 .input input {
@@ -56,4 +62,9 @@
 }
 .contentItem button:hover {
   color: var(--danger);
+}
+
+.successTask {
+  color: var(--gray-300);
+  text-decoration-line: line-through;
 }
