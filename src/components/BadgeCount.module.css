@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: var(--font-14);
 }
 
 .badgeContent > span {
@@ -10,9 +11,17 @@
   border-radius: 50%;
   line-height: none;
   color: var(--gray-200);
-  font-size: 14px;
 }
 
 .badgeContent > p {
-  font-size: 1
+  font-weight: 700;
+  line-height: normal;
+}
+
+.progress {
+  color: var(--blue);
+}
+
+.success {
+  color: var(--purple);
 }
